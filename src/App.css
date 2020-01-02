@@ -22,11 +22,24 @@ body{
   font-weight: bold;
   font-size: 1.4em;
   padding: 10px;
+  min-height: 90px;
 }
 
 .box .footer{
   background: #00B885;
   padding: 10px;
+}
+
+.box.disabled{
+  background: #e2e2e2;
+}
+
+.box.disabled .name{
+  color:#8b8b8b;
+}
+
+.box.disabled .footer{
+  background: #8b8b8b;
 }
 
 .has-search .form-control {
