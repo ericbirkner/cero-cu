@@ -7,7 +7,9 @@ import Oficina from './components/Oficina';
 class App extends Component {
 
   state = {
-    oficinas: []
+    oficinas: [],
+    search:'',
+    filtered:[]
   }
 
   componentDidMount() {
@@ -18,7 +20,17 @@ class App extends Component {
       })
   }
 
+  onchange = e => {
+    this.setState({ search: e.target.value });
+  };
+
   render() {
+
+    const { search } = this.state;
+    const filtered = this.state.oficinas.filter(oficina => {
+      return oficina.name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+    });
+
     return (
       <div className="App container-fluid">
         <div className="App-header row">
@@ -29,7 +41,7 @@ class App extends Component {
             <div className="col-lg-6 col-sm-12 no-gutters">
               <div className="form-group has-search">
                 <span className="fa fa-search form-control-feedback"></span>
-                <input type="text" className="form-control" placeholder="Buscar Sucursal"/>
+                <input type="text"  className="form-control" onChange={this.onchange} placeholder="Buscar Sucursal"/>
               </div>
             </div>
           </div>
@@ -39,7 +51,8 @@ class App extends Component {
         <div className="container mt-4">
 
           <div className="row">
-            { this.state.oficinas.map((oficina,i) =>
+
+            { filtered.map((oficina,i) =>
                <Oficina data={oficina} key={i}></Oficina>
             )}
           </div>
