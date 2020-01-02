@@ -1,0 +1,53 @@
+body{
+  background: #1B2F56;
+  color: #ffffff;
+}
+.App {
+}
+
+
+.App-header {
+  text-align: center;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.box, .franja{
+  background: #2D4F82;
+}
+
+.box .name{
+  font-weight: bold;
+  font-size: 1.4em;
+  padding: 10px;
+}
+
+.box .footer{
+  background: #00B885;
+  padding: 10px;
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
