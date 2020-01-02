@@ -39,8 +39,8 @@ class App extends Component {
         <div className="container mt-4">
 
           <div className="row">
-            { this.state.oficinas.map(oficina =>
-               <Oficina data={oficina}></Oficina>
+            { this.state.oficinas.map((oficina,i) =>
+               <Oficina data={oficina} key={i}></Oficina>
             )}
           </div>
         </div>
